@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkedlist</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff; 
+            
+           
+        }
+
+        .navbar {
+            background-color: #061728; 
+           
+        }
+        
+        .navbar img{
+            height: 60px;
+            width: 60px;
+        }
+        .navbar-toggler{
+            background-color: none;
+            border: none;
+         }
+         .navbar-toggler:hover{
+            scale: 1.05;
+            transition: .5s ease;
+            
+            box-shadow: 2px 2px 20px rgb(17, 255, 0);
+         }
+         .footer {
+            text-align: center;
+            padding: 20px 0;
+            cursor: default;
+        }
+        hr{
+            height: 1px;
+            background-color: rgb(255, 72, 0);
+        }
+        h3{
+            text-align: center;
+            color: yellow;
+        }
+        h4 i{
+        color: rgb(56, 213, 17);
+       }
+       .formula{
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            min-height: 80px;
+            max-width:500px ;
+            border-radius: 10px;
+            color: rgb(18, 211, 211);
+            background-color: #303030;
+            margin: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt="LG"> LocalandGlobal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="#home"><i class='bx bxs-home'></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class='bx bxs-info-circle'></i>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#courses"><i class='bx bxs-edit-alt'></i>Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"><i class='bx bxs-phone-call'></i>Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container"><br>
+            <h3>Linked List types & Implementation</h3>
+            <hr width="95%" size="4"> <br>
+            
+            <h4><i class="bx bxs-label"></i>What are the <i>types of Linked List?</i></h4>
+        <p>There are 4 different types of linked lists -
+            <ol>
+                <li><b>Singly Linked List:-</b> The linked list where each node contains a value and pointer that points to the next node. The  last node points to <b><i>NULL</i></b> to indicate the end of the list. <br> It allows traversal in one direction(forward direction).
+                </li>
+                <div class="formula" style="text-align: center; border: 1px solid; "><p><i> Node1 -> Node2 -> Node3 -> NULL</i></p></div> &nbsp;
+                
+                <li><b>Doubly Linked List:-</b> The linked list where each node contains a value and two pointers, one pointer points to the previous node and the other points to the next node. <br>
+                Both the first pointer of the first node and the last pointer of the last node points to <b><i>NULL</i></b> value. <br>
+                It  allows traversal in both directions (forward and backward). <br>
+                </li>
+                
+                <div class="formula" style="text-align: center; border: 1px solid; "><p><i> NULL <- Node1 <-> Node2 <-> Node3 -> NULL</i></p></div> &nbsp;
+
+                <li><b>Singly-Circular Linked List:-</b>The linked list that is similar to the singly linked list but the Difference is <b>the last node points back to the first node,</b> forming a circle.</li>
+
+                <div class="formula" style="text-align: center; border: 1px solid; "><p><i>Node1 -> Node2 -> Node3 -> Node1 
+                    (again)</i></p></div> &nbsp;
+
+                <li><b>Doubly-Circular Linked List:-</b> The linked list that is combination of doubly & circular linked, where the previous pointer of the first node points to the last node and the next pointer of the last node points to the first node.</li>
+                
+                <div class="formula" style="text-align: center; border: 1px solid; "><p><i>Node3<->Node1<->Node2<->Node3<->Node1</i></p></div>                
+
+            </ol>
+        </p>
+
+        
+
+        </div>      
+    </section>
+
+    
+    <p class="text-danger footer">&copy; 2024 LG FOUNDATION. All Rights Reserved.</p>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

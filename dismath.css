@@ -1,0 +1,28 @@
+h1{
+    color: rgba(154, 237, 31, 0.433);
+    font-size: 40px;
+    text-align: center;
+}
+
+    i{
+    color: rgb(213, 12, 86);
+}
+h2{
+    color: white;
+}
+p{
+    color: white;
+    font-size: 22px;
+}
+h3{
+    color: white;
+}
+table, tr, td, th{
+    border: 1px solid;
+    text-align: center;
+    padding: 4px;
+    border-color: beige;
+}
+b{
+    color: rgb(49, 221, 167);
+}

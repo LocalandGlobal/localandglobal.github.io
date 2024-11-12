@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue data structure</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS for this page */
+        body {
+            background-color: #000000;
+            color: #ffffff; 
+        }
+
+        .navbar {
+            background-color: #061728; 
+           
+        }
+        
+        .navbar img{
+            height: 60px;
+            width: 60px;
+        }
+        .navbar-toggler{
+            background-color: none;
+            border: 0;
+         }
+         .navbar-toggler:hover{
+            scale: 1.05;
+            transition: .5s ease;
+         }
+         .menu{
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+         }
+         .footer {
+            text-align: center;
+            padding: 20px 0;
+            cursor: default;
+        }
+        h4 i{
+                color: rgb(255, 255, 255);
+            }
+        .dark_mode{
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            h3{
+                color: rgb(164, 1, 126);
+            }
+            h4 i{
+                color: black;
+            }
+        }
+        hr{
+            height: 1px;
+            background-color: rgb(255, 72, 0);
+        }
+        h3{
+            text-align: center;
+        }
+        
+       .formula{
+            font-size: 18px;
+            padding: 20px;
+            min-height: 80px;
+            max-width:500px ;
+            border-radius: 10px;
+            color: rgb(18, 211, 211);
+            background-color: #303030;
+            pre{
+                color: white;
+            }
+            
+        }
+        .code-box {
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            position: relative;
+            overflow: auto;
+            color: #f8f8f2;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+        .output{
+            border: 1px solid;
+            font-size: 18px;
+            padding: 20px;
+            min-height: 80px;
+            max-width:500px ;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt="LG"> LocalandGlobal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+            <i class="bx bx-dots-vertical-rounded menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="#home"><i class='bx bxs-home'></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class='bx bxs-info-circle'></i>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#courses"><i class='bx bxs-edit-alt'></i>Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"><i class='bx bxs-phone-call'></i>Contact</a>
+                </li>
+                <li>
+                    <button id="toggle" class="btn text-white border "><i class="bx bxs-sun"></i></button>
+                    <button class="btn text-warning border" style="cursor: default;">LocalandGlobal</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- main content block -->
+    <section>
+        <div class="container"><br>
+            <h3>Chapter 5:Introduction to Queue Data Structure</h3>
+            <hr width="95%" size="4"> <br>
+            <h4><i class="bx bxs-layer"></i>What is Queue?</h4>
+            <p>A Queue is a<a href="ds.html"> linear data structure</a> that contains similar or different data items that follow <b>LIFO(Last in first out)</b> principle.
+            <br>
+            In a Queue, data items can be inserted at only one end and can be deleted from only another end.</p>
+
+            </div>
+        </section>
+        <!-- js cdn links -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/components/prism-c.min.js"></script>
+            <script>
+        // java script codes
+                document.addEventListener('DOMContentLoaded', ()=>{
+                    const button=document.getElementById('toggle');
+                    button.addEventListener('click',() =>{
+                        document.body.classList.toggle('dark_mode');
+        
+                        if(document.body.classList.contains('dark_mode'))
+                    {
+                        button.innerHTML='<i class="bx bxs-moon"></i>';
+                        
+        
+                    }
+                    else{
+                        button.innerHTML='<i class="bx bxs-sun"></i>';
+                    }
+                    });
+                });
+        
+        // copy function
+                function copyToClipboard(blockId, button) {
+                const codeElement = document.getElementById(blockId).getElementsByTagName('code')[0];
+                const range = document.createRange();
+                range.selectNode(codeElement);
+                window.getSelection().removeAllRanges(); // Clear current selection
+                window.getSelection().addRange(range); // Select the code block
+        
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        // Change button text to "Copied!"
+                        button.textContent = 'Copied✅';
+                        setTimeout(() => {
+                            // button.textContent = 'Copy';
+                            button.innerHTML = '<i class="bx bx-copy"></i>' ;// Reset text after 2 seconds
+                        }, 5000);
+                    }
+                } catch (err) {
+                    console.error('Oops, unable to copy: ', err);
+                }
+        
+                window.getSelection().removeAllRanges(); // Deselect the code block
+            }
+                </script>
+            </body>
+        </html>

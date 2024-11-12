@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data structure</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; 
+            color: #ffffff; 
+        }
+        .navbar {
+            background-color: #061728; 
+           
+        }
+        
+        img{
+            height: 60px;
+            width: 60px;
+        }
+        h2{
+            text-align: center;
+            margin: 15px;
+            
+        }
+        hr{
+            height: 1px;
+            background-color: rgb(255, 42, 0);
+        }
+        i{
+            color: rgb(255, 255, 255);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            cursor: default;
+        }
+        table, tr, td,th{
+            border: 1px solid;
+            text-align: center;
+            padding: 4px;
+        }
+        .btn-dark{
+            border: 2px solid;
+            width: fit-content;
+            border: none;
+            gap: .5rem;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 300;
+        }
+        button:hover{
+            box-shadow: 2.5px -1px 10px rgb(0, 213, 255) ;
+            color: red;
+            scale: 1.05;
+            transition: .5s ease;
+        }
+        th{
+            background-color: green;
+        }
+        h4 i{
+            color: white;
+        }
+        .dark_mode{
+            background-color: #ffffff;
+            color: #000000;
+            transition: .5s ease;
+            h4 i{
+            color: rgb(0, 0, 0);
+        }
+        th{
+            color: white;
+        }
+            
+        }
+        
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html"><img src="logo.png" alt="LG">LocalandGlobal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <button id="toggle" class="btn text-white border "><i class="bx bxs-sun"></i></button>
+                        <button class="btn text-success border" style="cursor: default;">LocalandGlobal</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h2>Chapter 1:Introduction to DATA STRUCTURE</h2>
+            <hr width="95%" size="4">
+            <div>
+                <h4><i class="bx bxs-layer"></i>What is <i>Data?</i></h4>
+                <p>Data is a collection of facts and figures or a set of values or values of a 
+                    specific format that refers to a single set of item values.
+                </p>
+                <h4><i class="bx bxs-layer"></i>What is <i>Data Structure?</i></h4>
+                <p> A data structure is a specific format for the purpose of efficiently managing, accessing, and storing data on a computer. <br> The effectiveness of data operations and algorithm performance can both be strongly impacted by the data structure selection. 
+                </p>
+                <h4><i class="bx bxs-layer"></i>Why should we <i>learn?</i></h4>
+                <p>1. Effective Data Management: Data structures facilitate the effective organization of data, enabling rapid access and alteration. <br>
+                    2. Performance Optimization: The temporal complexity of operations such as search, insert, delete, and update varies depending on the data structure. Knowing these structures enables you to select the best one for a particular task, which improves algorithm performance. <br>
+                    3. Problem-Solving Abilities: An understanding of data structures improves one's ability to solve problems. <br>
+                    4. Memory Management: By regulating the storage and retrieval of data, data structures facilitate efficient use of memory. <br>
+                    5. Interview Preparation: Knowledge of data structures is often tested in technical interviews for software engineering positions.
+                </p>
+                <h4><i class="bx bxs-layer"></i><i>Characteristics</i> of Data Structure?</h4>
+                <p>1. Organization: The way that data is accessed and arranged is determined by data structures. They specify how data is organized in memory, be it hierarchical (like trees) or sequential (like arrays). <br>
+                    2. Efficiency: They have an effect on how quickly and efficiently data operations like searching, insertion, deletion, and updating are completed. <br>
+                    3. Memory Usage: Data structures employ many techniques to control memory usage. <br>
+                    4. <a href="adtspm.html">ADT:-</a>Data structures frequently include abstract data types (ADTs), which offer a theoretical foundation that characterizes the behaviors and operations of the data structure regardless of how it is implemented. <br>
+                    5.Correctness: Data structures are made to function correctly for all types of inputs.
+                </p>
+                <h4><i class="bx bxs-layer"></i>Difference between <i>Data Types</i> & <i>Data Structures</i></h4>
+                &nbsp;
+                <table>
+                    <tr>
+                        <th>Aspects</th>
+                        <th>Data Types</th>
+                        <th>Data Structures</th>
+                    </tr>
+                    <tr>
+                        <td>Definition</td>
+                        <td>Basic uits that hold a single value.</td>
+                        <td>Collection of data types arranged for particular use.</td>
+                    </tr>
+                    <tr>
+                        <td>Exapmles</td>
+                        <td>int, char, float, double, bool etc.</td>
+                        <td>Array, linked list, tree, graph etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Purpose</td>
+                        <td>Representing basic data(number, character).</td>
+                        <td>Organise and efficient use of collection of data.</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>Size is fixed, depending on the types.(e.g. char-1byte, int-2byte/4byte)</td>
+                        <td>Size is not fixed, depending on the implementation.</td>
+                    </tr>
+                    <tr>
+                        <td>Operations</td>
+                        <td>Basic operations like, comparison, arithmetic etc.</td>
+                        <td>Comparatively complex include insertion, deletion, search, traverse etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Complexity</td>
+                        <td>Very Simple, provided by programming Languages.</td>
+                        <td>Can be either basic or complicated, constructed using variety of data types.</td>
+                    </tr>
+                    
+                </table>
+                &nbsp;
+
+
+
+                    <h4><i class="bx bxs-layer"></i><i>Classifications:-</i></h4> &nbsp;
+                    <img src="TypesDS.png" alt="dstypes" style="height: 100%; width: 100%;" class="image">
+                    &nbsp;
+                    <h4><i class="bx bxs-layer"></i><i><u>Primitive Data Structures:-</u></i></h4>
+                    <p>A <i>Primitive Data Structure</i> is used to store simple values ,being basic built-in data types included in the programming languages.
+                    <br> e.g. int, char, float etc.</p>
+                    <h5>Characteristics of Primitive Data Structure:-</h5>
+                    <p>1. Simple Values:- Primitive Data Structures  consisting of the 
+                        numbers and the characters. <br>
+                        2. Direct Storage & access:- Using these data structures, values are kept directly in the memory & can be manipulated directly by 
+                        machine-level instructions. <br>
+                        3. Built-in type:- Primitive data structures are built-in in the programming languages. <br>
+                        4. Opeartions:- Only basic arithmetic and logical operations are done with these data structures.
+                    </p>
+                    <h4><i class="bx bxs-layer"></i><i><u>Non-Primitive Data Structures:-</u></i></h4>
+                    <p>Complex data types that are constructed from primitive data types are known as <i>Non-primitive data structures.</i>
+                        <br> e.g. Array, Stack, Queue, LinkedList, Tree, Graph etc.</p>
+                    <h5>Characteristics of Non-Primitive Data Structure:-</h5>
+                    <p>1. They are collection  of various primitive data types. <br>
+                        2. They can not be altered by using machine level instructions. <br>
+                        3. They can be either homogenous (Similar ) or Heterogeneous (Different ) types of collection of data. <br>
+                        4. They are further classified in two categories-
+                        <br> &nbsp; &nbsp;
+                        (i). Linear Data Structures   <br> &nbsp; &nbsp;
+                       (ii). Non-Linear Data Structures
+                    </p>
+                    <h4><i>(i) Linear Data Structure:-</i></h4>
+                    <p>A linear data structure is a type of data structure where elements are arranged sequentially, meaning each element is connected to its previous and next element. <br>
+                    Examples:- Array, Linked list, stack, queue. 
+                    <br> <br>Linear Data Structures are 
+                    classified into two types on the basis of memory allocation:-
+                    <br> <br>
+                    1. Static Data Structures:- A static data structure is a type of data structure where the size is defined at compile time & the size is fixed.
+                    <br>
+                    <ul>
+                        <li>We cannont increase the size of a static data structure at run time.</li>
+                        <li>Memory allocation is Contigious.</li>
+                    </ul>
+                    Example:- Array is a static Data Structure.
+                    <br> <br>
+                    2. Dynamic Data Structures:- A dynamic data structure is a type of data structure that can grow and shrink in size at run time i.e. during program execution. <br>
+                    <ul>
+                        <li>Dynamic Data Structures can allocate and deallocate memory as needed.</li>
+                        <li>Data Can be of different types and no contigious memory allocation happen.</li>
+                    </ul>
+                    Examples:- Linked Lists, Stacks, and Queues are Dynamic Data Structures.
+                    </p>
+                    <h4><i class="bx bxs-layer"></i><i>Characteristics of Liner Data Structure :-</i></h4>
+                    <p>1.Sequential Arrangement: Elements are stored in a sequential manner.
+                        <br>
+                        2.Single Level: There is a direct relationship between consecutive elements.
+                        <br>
+                        3.Fixed Size: For some data structures the size is defined at compile time(e.g., arrays), but some can grow and shrink dynamically i.e. at run time(e.g., linked lists, stack, queue).</p>
+                    <h4><i class="bx bxs-layer"></i><i>Different Linear Data structures :-</i></h4>
+                   <p> 1.Arrays: Collection of Homogenous data elements stored at contigiuos memory locations. <br>
+                    2. Linked Lists: A dynamic collection of data elements where each node points to the address of the next node & the last node points to a NULL value. <br>
+                    3. Stacks: A collection that allows adding(PUSH) and removing(POP) elements in a Last In First Out (LIFO) manner. <br>
+                    4.Queues: A collection of data elements that processes elements in a First In First Out (FIFO) manner. <br> </p>
+                    <h4><i>(ii) Non-Linear Data Structure:-</i></h4>
+                    <p>A Non-linear data structure is a type of data structure where elements are not arranged sequentially, seems like elements are scattered on a plane. Instead, they can be connected in a hierarchical or graph-based manner, allowing for more complex relationships among data elements. <br>
+                    Example:- Tree, Graph etc.
+                    </p>
+                    <h4><i class="bx bxs-layer"></i><i>Different Non-Linear Data structures :-</i></h4>
+                    <p>1.Tree:-A tree data structure is a hierarchical data structure that consists of nodes connected by edges. <br>
+                    2.Graph:-A graph data structure is a collection of nodes (or vertices) connected by edges.</p>
+                    <h4><i class="bx bxs-layer"></i><i>Characteristics of Non-Liner Data Structure :-</i></h4>
+                    <p>1.Dynamic size:- These data structure can grow or shrink their size dynically i. e. at run time. <br>
+                        2.Complex Traversal: Compared to linear data structures, traversal can be more complex. <br>
+                        3.Hierarchical : Elements can have multiple relationships and connections, rather than a simple parent-child relationship.</p>
+                    <h4><i class="bx bxs-layer"></i><i>Basic operations</i> of Data Structures</h4>
+                    <p>1. Traversal:- Accessing each element in a list.  
+                        <br>
+                        2. Searching:- Finding the location of a perticular data element.  <br>
+                        3.Sorting:-Arragement of the elements in ascending, descending, non-inceasing Or non-decrasing order. 
+                        <br>
+                        4. Marge:-Combining elements of two lists into a single list. <br>
+                        5.Insertion:-Insert elements into a list of elements. <br>
+                        6.Deletion:- Remove elements from a list of elements.  <br>
+                        7. Updating:-Modifying an element at a specific position(index) in a list. <br>
+                        These are the most common operations performed in different types of data structures. 
+
+                    </p>
+                    <h6><a href="adtspm.html" target="_blank">ADT & SPARSE MATRIX</a></h6>
+                    <button class="btn-dark"><a href="datastructure.html" target="_blank"><i class="bx bxs-left-arrow">Prev</i></a></button>
+                    <button class="btn-dark" style="float: right;"><a href="array.html" class="text-white text-decoration-none" target="_blank">Next<i class="bx bxs-right-arrow"></i></a></button> <br> <br>
+                    
+            </div>
+        </div>
+
+            
+
+
+        
+    <p class="text-danger footer">&copy; 2024 LG FOUNDATION. All Rights Reserved.</p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', ()=>{
+            const button=document.getElementById('toggle');
+            button.addEventListener('click',() =>{
+                document.body.classList.toggle('dark_mode');
+
+                if(document.body.classList.contains('dark_mode'))
+            {
+                button.innerHTML='<i class="bx bxs-moon"></i>';
+
+            }
+            else{
+                button.innerHTML='<i class="bx bxs-sun"></i>';
+            }
+            });
+        });
+    </script>
+</body>
+</html>

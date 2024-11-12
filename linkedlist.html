@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <!--CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff; 
+            
+           
+        }
+
+        .navbar {
+            background-color: #061728; 
+           
+        }
+        
+        .navbar img{
+            height: 60px;
+            width: 60px;
+        }
+        .navbar-toggler{
+            background-color: none;
+         }
+         .navbar-toggler:hover{
+            scale: 1.05;
+            transition: .5s ease;
+            box-shadow: 2px 2px 20px rgb(17, 255, 0);
+         }
+         li:hover{
+            color: green;
+         }
+         .footer {
+            text-align: center;
+            padding: 20px 0;
+            cursor: default;
+        }
+        hr{
+            height: 1px;
+            background-color: rgb(255, 72, 0);
+        }
+        h3{
+            text-align: center;
+        }
+        h4 i{
+        color: rgb(255, 255, 255);
+       }
+       table, tr, th, td{
+            border: 1px solid;
+            text-align: center;
+            padding: 4px;
+       }
+       .dark_mode{
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            h3{
+                color: rgb(164, 1, 126);
+            }
+            h4 i{
+                color: black;
+            }
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt="LG"> LocalandGlobal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="#home"><i class='bx bxs-home'></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class='bx bxs-info-circle'></i>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#courses"><i class='bx bxs-edit-alt'></i>Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"><i class='bx bxs-phone-call'></i>Contact</a>
+                </li>
+                <li>
+                    <button id="toggle" class="btn text-white border "><i class="bx bxs-sun"></i></button>
+                    <button class="btn text-warning border" style="cursor: default;">LocalandGlobal</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   <section>
+    <div class="container"><br>
+        <h3>Chapter 4:Introduction to Linked List</h3>
+        <hr width="95%" size="4"> <br>
+        <h4><i class="bx bxs-layer"></i>What is <i>Linked List?</i></h4>
+        <p>A <b>Linked List</b> is a linera data structure where data elements, called nodes, are stored dynamically in a sequencial manner.</p>
+        <p>Each node contains two parts :
+            <ol>
+                <li><b>Data:-</b> Stores the actual value or information.</li>
+                <li><b>Address(Pointer):-</b> Holds a reference to the next node in the sequence.</li>
+            </ol>
+        </p>
+        
+<h4><i class="bx bxs-layer"></i><i>Array</i> Vs. <i>Linked list</i></h4>
+        <!-- table -->
+        <table>
+            <tr style="background-color: rgba(221, 52, 52, 0.93);">
+                <th>Aspects</th>
+                <th>Array</th>
+                <th>Linked List</th>
+            </tr>
+            <tr>
+                <td>Memory Allocation</td>
+                <td>Static memory allocation(done at compile time)</td>
+                <td>Dynamic memory allocation(done at run time)</td>
+            </tr>
+            <tr>
+                <td>Size</td>
+                <td>Size is fixed</td>
+                <td>Dynamic size</td>
+            </tr>
+            <tr>
+                <td>Contiguity</td>
+                <td>Stores data at contiguous memory locations</td>
+                <td>Non-contiguous memory locations</td>
+            </tr>
+            <tr>
+                <td>Data types</td>
+                <td>Homogeneous(all are of same data types)</td>
+                <td>Heterogeneous(able to store different data types)</td>
+            </tr>
+            <tr>
+                <td>Pointers</td>
+                <td>Pointers are not required</td>
+                <td>Pointers are mandatory to move to the next node</td>
+            </tr>
+            <tr>
+                <td>Traversal</td>
+                <td>Data elements can be accessed sequentially</td>
+                <td>Data elements can be accesed sequentially using pointer</td>
+            </tr>
+            <tr>
+                <td>Implement</td>
+                <td>Easy to implement</td>
+                <td>Harder to implement</td>
+            </tr>
+        </table>
+        &nbsp;
+
+        <h4><i class="bx bxs-layer"></i><i>Advantages </i>of Linked List?</h4>
+        <p>
+            <ol>
+                <li><b>Dynamic Size:</b> Can grow or shrink in size dynamically without the need for 
+                    reallocation.
+                    </li>
+                <li><b>Efficient Insertion/Deletion:</b> Especially useful when frequent insertions and 
+                    deletions are required.</li>
+                <li><b>No Memory Waste: </b> Unlike arrays, which may have unused memory, linked lists use only the required amount of memory.
+                    </li>
+            </ol>
+        </p>
+
+        <h4><i class="bx bxs-layer"></i><i>Disadvantages </i>of Linked List?</h4>
+        <p>
+            <ol>
+                <li><b>Extra Memory for Pointers: </b>Each node requires additional memory for the 
+                    pointer(s).
+                    </li>
+                <li><b>Access Time: </b>Slower access compared to arrays since we must traverse the list to reach a specific node.</li>
+                <li><b>Complex Implementation: </b>Managing pointers can be complex and error-prone.</li>
+            </ol>
+        </p>
+
+
+        <h4><i class="bx bxs-layer"></i>When we use <i>array over Linked List?</i></h4>
+        <ul>
+            <li><b>Random Access:</b> Array has O(1) time complexity for accessing an element by its index, allows for efficient access.</li>
+            <li><b>Efficient memory usage: </b>Array don't requires pointer though it has lower memory overhead compared to linked list.</li>
+            <li><b>Fixed Size: </b> Since it is a static data structure, array can be more useful if we know the size before implementation.</li>
+            <li><b>Similar data item: </b>Array is more usuful when we need similar data items in a program as compared to linked list.</li>
+            <li><b>Others: </b>Implementation of stack, queue, matrices etc.</li>
+        </ul>
+        <h4><i class="bx bxs-layer"></i>When we use <i>linked list over array?</i></h4>
+        <ul>
+            <li><b>Dynamic size:</b> Linked list is suitable when we don't know the size, since it is dynamic and can grow or shrink in size as per the user needed.</li>
+            <li><b>No memory wastage: </b>Since linked list is dynamic, it is memory efficient & there is no memory wastage like arrays.</li>
+            <li><b>Ease of insertion/deletion: </b> Linked list provides O(1) time complexity for insertion/deletion of data inside the memory.</li>
+            <li><b>Implement data structure: </b>Linked list is used to implement other data structures like tree, stack, queue etc.</li>
+            <li><b>Others: </b>Linked list is used to perform operations on long integers, manipulation of polynomials etc.</li>
+        </ul>
+    </div>
+   </section>
+
+   <p class="text-danger footer">&copy; 2024 LG FOUNDATION. All Rights Reserved.</p>
+   
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', ()=>{
+            const button=document.getElementById('toggle');
+            
+            button.addEventListener('click',() =>{
+                document.body.classList.toggle('dark_mode');
+
+                if(document.body.classList.contains('dark_mode'))
+            {
+                button.innerHTML='<i class="bx bxs-moon"></i>';
+                
+
+            }
+            else{
+                button.innerHTML='<i class="bx bxs-sun"></i>';
+            }
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

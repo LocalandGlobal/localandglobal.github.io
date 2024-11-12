@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalandGlobal</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff; 
+            
+           
+        }
+
+        .navbar {
+            background-color: #061728; 
+           
+        }
+        
+        .navbar img{
+            height: 60px;
+            width: 60px;
+        }
+        .navbar-toggler{
+            background-color: none;
+         }
+         .navbar-toggler:hover{
+            scale: 1.05;
+            transition: .5s ease;
+         }
+         .menu{
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+         }
+         .footer {
+            text-align: center;
+            padding: 20px 0;
+            cursor: default;
+        }
+        h4 i{
+            color: rgb(255, 255, 255);
+        }
+        .dark_mode{
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            h3{
+                color: rgb(164, 1, 126);
+            }
+            h4 i{
+                color: black;
+            }
+            
+        }
+        hr{
+            height: 1px;
+            background-color: rgb(255, 72, 0);
+        }
+        h3{
+            text-align: center;
+        }
+        
+       .formula{
+            font-size: 18px;
+            padding: 20px;
+            min-height: 80px;
+            max-width:500px ;
+            border-radius: 10px;
+            color: rgb(18, 211, 211);
+            background-color: #303030;
+            pre{
+                color: white;
+            }
+            
+        }
+        .code-box {
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            position: relative;
+            overflow: auto;
+            color: #f8f8f2;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+        .output{
+            border: 1px solid;
+            font-size: 18px;
+            padding: 20px;
+            min-height: 80px;
+            max-width:500px ;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            background-color: #e6e6e6;
+        }
+        @media only screen and (min-width:900px)
+        {
+            .code-box{
+                height: 830px;
+                width: 600px;
+            }
+            .boxes{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt="LG"> LocalandGlobal</a>
+        <button id="menu_button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+            <i class="bx bx-dots-vertical-rounded menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="#home"><i class='bx bxs-home'></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class='bx bxs-info-circle'></i>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#courses"><i class='bx bxs-edit-alt'></i>Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact"><i class='bx bxs-phone-call'></i>Contact</a>
+                </li>
+                <li>
+                    <button id="toggle" class="btn text-white border "><i class="bx bxs-sun"></i></button>
+                    <button class="btn text-warning border" style="cursor: default;">LocalandGlobal</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- main content block -->
+    <section>
+        <div class="container"><br>
+            <h3>Array Searching Operations</h3>
+            <hr width="95%" size="4"> <br>
+            <h4><i class="bx bxs-layer"></i>What is Searching?</h4>
+            <p>Searching refers to find a particular element in the array if it is present in that array or not.</p>
+            <h4><i class="bx bxs-layer"></i>Types of searching:-</h4>
+            <p>Here you'll learn about two searching algorithms-</p>
+            <ol>
+                <li>Linear search</li>
+                <li>Binary search</li>
+            </ol>
+            <h4><i class="bx bxs-layer"></i>Linear Search Algorithm</h4>
+            <hr style="background-color: #7e7e7e;">
+            <p>Linear search is one of the simplest searching method. In this process, we'll 
+                check each element of the array one-by-one until we find the element or reach the end of the 
+                array.</p>
+                <p>The alogorithm for linear search is given below-</p>
+                <div class="boxes"><div class="formula" style="text-align: center; border: 1px solid;">
+<PRE>
+FUNCTION linearSearch(A, n, item)
+    FOR i FROM 0 TO n-1 DO 
+        IF A[i]==item THEN
+            RETURN i 
+    ENDIF
+    ENDFOR
+    RETURN -1
+END FUNCTION
+</PRE>
+                    <ol>
+                        <li>The function takes A, a linear array, n is the size of the array and item is the element to be searched here</li>
+                        <li>A <i>for</i> loop iterates through all the indices from 0 to n-1</li>
+                        <li>An <i>if</i> statement is used to check for each element of the array if the element at index i is equal to the <i>item</i></li>
+                        <li>If it found a match, it returns the index i</li>
+                        <li>If the loop completes without finding the element. it will return -1 that denotes item is not found</li>
+                        
+                    </ol>
+                </div>
+            </div>
+                <br>
+                <!-- code -->
+                <div class="boxes"><div class="code-box" id="code6">
+                    <i>C</i>
+                    <button class="btn btn-dark text-success copy-btn" onclick="copyToClipboard('code6',this)"><i class='bx bx-copy'></i></button>
+                    <pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int linearSearch(int A[], int n, int item) {
+    for (int i = 0; i < n; i++) {
+        if (A[i] == item) {
+            return i; // Returns the index if item is found
+            }
+        }
+    return -1; // Return -1 if the item is not found
+}
+                            
+int main() {
+    int A[] = {10, 17, 28, 94, 121, 404};
+    int n = sizeof(A) / sizeof(A[0]);
+    int item;
+                            
+    printf("Enter the element you want to search: ");
+    scanf("%d", &item);
+                            
+    int res = linearSearch(A, n, item);
+                            
+    if (res == -1) {
+        printf("Element not found in the array.\n");
+    } else {
+            printf("Element found at index: %d\n", res");
+    }
+                            
+    return 0;
+    }
+                    </code></pre>
+                </div>
+            </div>
+                <br>
+                <h4>Output</h4>
+                <div class="output">TO be updated</div>
+                <br>
+                <h4><i class="bx bxs-layer"></i>Advantages of Linear search</h4>
+                <ul>
+                    <li><b>Simplicity:-</b> Linear search is one of the simplest searching algorithm to understand as well as implement. </li>
+                    <li><b>Avoid sorting:- </b>Linear search doesn't required  sorting of the elements before searching.</li>
+                </ul>
+                <h4><i class="bx bxs-layer"></i>Disadvantages of Linear search</h4>
+                <ul>
+                    <li><b>Time complexity:- </b>The time complexity of LSA(Linear Search Algorithm) for average and worst case is O(n), n is the number of elements in the array.</li>
+                    <li><b>Not suitable for large amount of data:- </b>As per the array size gets increased, the performance of LSA(Linear Search Algorithm) is decreases significantly.</li>
+                </ul>
+                <h4><i class="bx bxs-layer"></i>Time & Space Complexity</h4>
+                <ol>
+                    <li><b>Best case:- O(1)</b></li>
+                    <li><b>Worst case:- O(n)</b></li>
+                    <li><b>Average case:- O(n)</b></li>
+                </ol>
+                <ul>
+                    <li><b>Space complexity:- O(1)</b>, since no additional space is required.</li>
+                </ul>
+
+<br>
+                <h4><i class="bx bxs-layer"></i>Binary Search Algorithm</h4>
+            <hr style="background-color: #7e7e7e;">
+            <p>Binary Search is a highly efficient algorithm for finding an item from a sorted list of items. 
+                It works by repeatedly dividing the portion of the list that could contain the item in half until 
+                you've narrowed the possible locations to just one. This method is significantly faster than 
+                linear search, especially for large datasets.</p>
+                <p>The alogorithm for BInary search is given below-</p>
+                <div class="boxes"><div class="formula" style="text-align: center; border: 1px solid;">
+<PRE>
+FUNCTION linearSearch(A, n, item)
+    FOR i FROM 0 TO n-1 DO 
+        IF A[i]==item THEN
+            RETURN i 
+    ENDIF
+    ENDFOR
+    RETURN -1
+END FUNCTION
+</PRE>
+                    <ol>
+                        <li>The function takes A, a linear array, n is the size of the array and item is the element to be searched here</li>
+                        <li>A <i>for</i> loop iterates through all the indices from 0 to n-1</li>
+                        <li>An <i>if</i> statement is used to check for each element of the array if the element at index i is equal to the <i>item</i></li>
+                        <li>If it found a match, it returns the index i</li>
+                        <li>If the loop completes without finding the element. it will return -1 that denotes item is not found</li>
+                        
+                    </ol>
+                </div>
+            </div>
+                <br>
+                <!-- code -->
+                <div class="boxes"><div class="code-box" id="code6">
+                    <i>C</i>
+                    <button class="btn btn-dark text-success copy-btn" onclick="copyToClipboard('code6',this)"><i class='bx bx-copy'></i></button>
+                    <pre><code class="language-c">
+#include&lt;stdio.h&gt;
+
+int binarySearch(int A[], int n, int item) {
+    int start = 0;
+    int end = n - 1;
+    while (start <= end) {
+    int mid = start + (end - start) / 2; // To avoid overflow
+    if (A[mid] == item) {
+    return mid; // Return the index of the target element
+    }
+    else if (A[mid] < item) {
+    start = mid + 1; // Search in the right half
+    }
+    else {
+    end = mid - 1; // Search in the left half
+    }
+    }
+    return -1; // Return -1 if the target element is not found
+    }
+    
+                            
+int main() {
+    int A[] = {10, 17, 28, 94, 121, 404};
+    int n = sizeof(A) / sizeof(A[0]);
+    int item;
+                            
+    printf("Enter the element you want to search: ");
+    scanf("%d", &item);
+                            
+    int res = linearSearch(A, n, item);
+                            
+    if (res == -1) {
+        printf("Element not found in the array.\n");
+    } else {
+            printf("Element found at index: %d\n", res");
+    }
+                            
+    return 0;
+    }
+                    </code></pre>
+                </div>
+            </div>
+                <br>
+                <h4>Output</h4>
+                <div class="output">TO be updated</div>
+                <br>
+                <h4><i class="bx bxs-layer"></i>Advantages of Binary search</h4>
+                <ul>
+                    <li><b>Lower time complexity:-</b> Binary search has a time complexity of O(log n) that make it more efficient searching algorithm than linear search.</li>
+                    <li><b>Less no. of comparisons:- </b>This algorithm eliminates half of the remaining elements in each steps to find the element by reducing number comparisons.</li>
+                </ul>
+                <h4><i class="bx bxs-layer"></i>Disadvantages of Binary search</h4>
+                <ul>
+                    <li><b>Need sorted data items:- </b>Binary search is efficient for sorted data only. If the data items are not sorted, we have to sort the list of data first that may lead to O(n log n) of time.</li>
+                    <li><b>Complex to implement:- </b>Implementing binary search is much complex how ever the concept is simple and it also may be difficult to understand to new programmers.</li>
+                </ul>
+                <h4><i class="bx bxs-layer"></i>Time & Space Complexity</h4>
+                <ol>
+                    <li><b>Best case:- O(1)</b></li>
+                    <li><b>Worst case:- O(log n)</b></li>
+                    <li><b>Average case:- O(log n)</b></li>
+                </ol>
+                    <h4><i class="bx bxs-layer"></i>Space complexity</h4> 
+                    <ol><li><b>O(1):-</b> When we use iterations.</li>
+                        <li><b>O(log n):-</b> when we use recursion.</li>
+                    </ol>
+
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/components/prism-c.min.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const button=document.getElementById('toggle');
+            
+            button.addEventListener('click',() =>{
+                document.body.classList.toggle('dark_mode');
+
+                if(document.body.classList.contains('dark_mode'))
+            {
+                button.innerHTML='<i class="bx bxs-moon"></i>';
+                
+
+            }
+            else{
+                button.innerHTML='<i class="bx bxs-sun"></i>';
+            }
+            });
+        });
+
+       
+
+        function copyToClipboard(blockId, button) {
+        const codeElement = document.getElementById(blockId).getElementsByTagName('code')[0];
+        const range = document.createRange();
+        range.selectNode(codeElement);
+        window.getSelection().removeAllRanges(); // Clear current selection
+        window.getSelection().addRange(range); // Select the code block
+
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                // Change button text to "Copied!"
+                button.textContent = 'Copied✅';
+                setTimeout(() => {
+                    // button.textContent = 'Copy';
+                    button.innerHTML = '<i class="bx bx-copy"></i>' ;// Reset text after 2 seconds
+                }, 5000);
+            }
+        } catch (err) {
+            console.error('Oops, unable to copy: ', err);
+        }
+
+        window.getSelection().removeAllRanges(); // Deselect the code block
+    }
+        </script>
+    </body>
+</html>
